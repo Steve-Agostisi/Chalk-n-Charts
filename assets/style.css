@@ -1,0 +1,15 @@
+.Main-header {
+  padding: 40px;
+  text-align: center;
+  /* Refer to CSS values by the name of the custom property we assigned it */
+    background-color: #ff4c00 ;
+  color: white; 
+
+} 
+nav {
+  display: flex;
+ font-family: Georgia, 'Times New Roman', Times, serif; 
+  text-align: right; 
+  font-size: 20px; 
+  font-weight: bold;
+} 
