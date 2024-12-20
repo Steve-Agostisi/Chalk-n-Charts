@@ -34,7 +34,9 @@ padding: 14px 20px;
 text-decoration: wavy;
 
 }
-
+nav a:hover {
+  background-color: orangered;
+}
 
 
 
