@@ -1,7 +1,7 @@
 /* Basic styles for the page */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
+  background-color:white;
   margin: 0;
   padding: 0;
 }
@@ -11,7 +11,7 @@ body {
   max-width: 500px;
   margin: 50px auto;
   padding: 20px;
-  background-color: white;
+  background: linear-gradient(270deg, #e89696, #FE6363);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -42,15 +42,16 @@ input, textarea {
 
 button {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #f9e285;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  max-width: fit-content;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: rgba(252, 210, 0, 0.949);
 }
 
 #message {

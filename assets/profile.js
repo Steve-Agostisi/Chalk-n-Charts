@@ -19,7 +19,7 @@ form.addEventListener('submit', function(event) {
 
         // Store the data in localStorage
         localStorage.setItem('profileData', JSON.stringify(profileData));
-
+        
         // Display success message
         message.textContent = 'Form submitted successfully!';
         message.style.color = 'green';
@@ -29,6 +29,8 @@ form.addEventListener('submit', function(event) {
 
         // Display stored data
         displayStoredData();
+        window.location.href='index.html';
+        
     } else {
         // Display error message if any form fields are missing
         message.textContent = 'Please complete all fields!';

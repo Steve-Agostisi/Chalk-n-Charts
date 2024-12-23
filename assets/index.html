@@ -14,31 +14,48 @@
   <body>
     <div id="myModal" class="modal">
       <div class="modal-header">
-        <h2>Welcome</h2>
+        <h2>Welcome to ChalknCharts!</h2>
       </div>
       <div class="modal-body">
-        <p>Message about website</p>
+        <p> We’re excited to introduce our Cultural Exchange Programs, where children can explore new cultures, make international friends, and develop a global perspective.</p>
+          <p>Through our programs, kids not only have the chance to learn new languages and gain cultural insights but also build important life skills like empathy, confidence, and adaptability.</p>
+          <p>These experiences help foster personal growth and a deeper appreciation for diversity, all while making unforgettable memories. 
+            Join us at ChalknCharts and give your child the opportunity to embark on a journey of learning, discovery, and meaningful connections. </p>
+          
+
+
+        </p>
       </div>
       <div class="modal-footer">
-        <h3>Have a good day!</h3>
-        <button id="close-modal">Close</button>
+        <h3>Register today and take the first step toward a brighter, more connected future!</h3>
+        <button id="close-modal">X</button>
       </div>
     </div>
     <header class="Main-header">
-        <h1>ChalknCharts</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a> 
-          </nav> 
-          <div>
-         <button id="myButton" class="float-left submit-button">My Profile</button>
-          </div>
+              
+                  <div class="logo"></div>
+                   <div id="profile-data"></div>
+              
     </header>
+
+
+    <nav>
+      <div class="links-container">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a> 
+      </div>
+           <div class="btn_container">
+            <button id="myButton" class="float-left submit-button"><strong>Register</strong></button>
+          </div>
+    </nav> 
+
     <main> 
       <div class="schools">
         <section class="card"> 
-            <header>Carrigan Intermediate School</header> 
+          <img src="meeting4.jpg" alt="school1">
+          <header><h2>Academy of Our Lady of Mercy - Lauralton Hall</h2></header> 
+          <div class="schooldata">
             <ul>
                 <li>Country:</li>
                 <li>TimeZone:</li>
@@ -46,9 +63,12 @@
                 <li>Grade:</li>
                 <li>Topics of interest:</li>
             </ul>
+            </div>
           </section>
           <section class="card">
-            <header>Bailey Middle school</header> 
+            <img src="meeting2.avif" alt="school1">
+            <header><h2>Archbishop Stepinac</h2></header> 
+            <div class="schooldata">
             <ul>                
                 <li>Country:</li>
                 <li>TimeZone:</li>
@@ -56,9 +76,13 @@
                 <li>Grade:</li>
                 <li>Topics of interest:</li>
             </ul>
+            </div>
           </section>
           <section class="card">
-            <header>Chapman School</header> 
+            
+            <img src="meeting1.jpg" alt="school1">
+            <header><h2>Wooster School</h2></header> 
+            <div class="schooldata">
             <ul>               
                 <li>Country:</li>
                 <li>TimeZone:</li>
@@ -66,9 +90,16 @@
                 <li>Grade:</li>
                 <li>Topics of interest:</li>
             </ul>
+            </div>
+            <div class="card_btn">
+              <button type="submit">Join Event</button>
+              <button> Cancel</button>
+            </div>
           </section>
           <section class="card">
-            <header>Dodd Middle School</header> 
+            <img src="meeting3.jpg" alt="school1">
+            <header><h2>South Kent School</h2></header> 
+            <div class="schooldata">
             <ul>                
                 <li>Country:</li>
                 <li>TimeZone:</li>
@@ -76,10 +107,35 @@
                 <li>Grade:</li>
                 <li>Topics of interest:</li>
             </ul>
+            </div>
           </section>
         </div>
     </main>
     <footer></footer>
   </body>
+  <script>
+    // Function to load and display profile data from localStorage
+    function displayProfileData() {
+        const storedData = localStorage.getItem('profileData');
+        const profileDataContainer = document.getElementById('profile-data');
+
+        if (storedData) {
+            // Parse the stored data from localStorage
+            const parsedData = JSON.parse(storedData);
+
+            // Inject the data into the HTML
+            profileDataContainer.innerHTML = `
+                <p><strong>Hello, </strong> ${parsedData.username}</p>
+                <p><strong>Title:</strong> ${parsedData.title}</p>
+                <p><strong>Content:</strong> ${parsedData.content}</p>
+            `;
+        } else {
+            profileDataContainer.innerHTML = '<p>No profile data found.</p>';
+        }
+    }
+
+    // Call the function to display profile data when the page loads
+    document.addEventListener('DOMContentLoaded', displayProfileData);
+</script>
   <script src="script.js"></script>
 </html> 
