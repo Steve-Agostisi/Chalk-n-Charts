@@ -125,7 +125,6 @@ nav {
     
     padding: 10px;
     flex: 0 0 300px;
-    background-color: #ff3cac;
     background-image: linear-gradient(
         225deg,
         #98C1ED 10%,
@@ -133,7 +132,7 @@ nav {
         #1D68B8 100%);
     margin: 20px;
     border-radius: 15px;
-    height: 400px;
+    height: 450px;
     transition: transform 1s;
 
 }
@@ -150,6 +149,10 @@ nav {
   transform: scale(1.2);
 }
 
+.card-btn{
+  display:inline-block;
+}
+
 .schools{
 flex: 1;
 padding: 50px;
@@ -159,6 +162,9 @@ justify-content: space-evenly;
 height: 100%; 
 }
 
+.success-message{
+  color: aliceblue;
+}
 
 .myButton {
   height: 30px; /* Keep the original height */
@@ -194,15 +200,25 @@ height: 100%;
   transform: scale(0.98); /* Slight shrink when clicked */
 }
 
-.card-btn{
 
-  display:flex;
-  justify-content: center;
-
+.confirmation-dialog {
+  display: none;
+  position:relative;
+  top: 10%;
+  left: 50%;
+  width: 250px;
+  height: 80px;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #FE6363, #FFB6B6, #D85B5B);
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  font-size: 15px;
 }
 
-.myensure {
-  display:block;
+
+/* .confirmation-dialog {
+  display:none;
   position:relative;
   left: 0px;
   right: 0px;
@@ -216,12 +232,11 @@ height: 100%;
   padding: 1em;
   background-color: hsl(0, 99%, 75%);
   pointer-events: none;
-  /* z-index: 1; */
-}
+  /* z-index: 1;
+ } */
+
 
 .join-btn {
-  display: flex;
-  align-items: end;
   background: transparent;
   border-width: 0px;
   font-size: 15px;
@@ -229,22 +244,23 @@ height: 100%;
 
 }
 
-.confirm-btn{
+.confirm-btn, .cancel-btn{
   background: transparent;
   border-width: 0px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
+  padding: 0px 20px;
 
 }
 
-.cancel-btn{
+.close-dialog {
   background: transparent;
   border-width: 0px;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
+  margin-left: 90%;
 
 }
-
 
 footer{
   padding: 10px;
