@@ -12,33 +12,33 @@
 
 
   <body>
+    <!-- Modal on page load-->
     <div id="myModal" class="modal">
       <div class="modal-header">
-        <h2>Welcome to ChalknCharts!</h2>
+        <h3>Welcome to ChalknCharts!</h3>
+        <button id="close-modal" class="myButton">X</button>
       </div>
       <div class="modal-body">
         <p> We’re excited to introduce our Cultural Exchange Programs, where children can explore new cultures, make international friends, and develop a global perspective.</p>
           <p>Through our programs, kids not only have the chance to learn new languages and gain cultural insights but also build important life skills like empathy, confidence, and adaptability.</p>
-          <p>These experiences help foster personal growth and a deeper appreciation for diversity, all while making unforgettable memories. 
-            Join us at ChalknCharts and give your child the opportunity to embark on a journey of learning, discovery, and meaningful connections. </p>
-          
-
-
-        </p>
+          <p>Join us at ChalknCharts and give your child the opportunity to embark on a journey of learning, discovery, and meaningful connections. </p>
       </div>
       <div class="modal-footer">
         <h3>Register today and take the first step toward a brighter, more connected future!</h3>
-        <button id="close-modal">X</button>
+        
       </div>
     </div>
-    <header class="Main-header">
-              
-                  <div class="logo"></div>
-                   <div id="profile-data"></div>
-              
-    </header>
+    <!--Modal on page load end-->
 
+    <!-- Main page header -->
+          <header class="Main-header">
+                <div class="logo"></div>
+                <div id="profile-data"></div>
+          </header> 
+   
+     <!-- Main page header end-->
 
+    <!--Navigation bar -->        
     <nav>
       <div class="links-container">
       <a href="#">Home</a>
@@ -46,14 +46,16 @@
       <a href="#">Contact</a> 
       </div>
            <div class="btn_container">
-            <button id="myButton" class="float-left submit-button"><strong>Register</strong></button>
+            <button id="myButton" class="myButton"><strong>Register</strong></button>
           </div>
     </nav> 
+     <!--Navigation bar end-->     
 
+     <!-- Main body with section cards-->
     <main> 
       <div class="schools">
         <section class="card"> 
-          <img src="meeting4.jpg" alt="school1">
+          <img src="meeting1.jpg" alt="classroom1">
           <header><h2>Academy of Our Lady of Mercy - Lauralton Hall</h2></header> 
           <div class="schooldata">
             <ul>
@@ -66,7 +68,7 @@
             </div>
           </section>
           <section class="card">
-            <img src="meeting2.avif" alt="school1">
+            <img src="meeting2.avif" alt="classroom2">
             <header><h2>Archbishop Stepinac</h2></header> 
             <div class="schooldata">
             <ul>                
@@ -80,7 +82,7 @@
           </section>
           <section class="card">
             
-            <img src="meeting1.jpg" alt="school1">
+            <img src="meeting3.jpg" alt="classroom3">
             <header><h2>Wooster School</h2></header> 
             <div class="schooldata">
             <ul>               
@@ -92,12 +94,31 @@
             </ul>
             </div>
             <div class="card_btn">
-              <button type="submit">Join Event</button>
-              <button> Cancel</button>
+              <button id="joinButton" class= "join-btn">Join </button>
+              <!-- dialog start -->
+              <dialog id="ensure" class="myesnure">
+                      <div class="dialog header">
+                        <button id="closeDialog" class="cancel-btn">x</button>
+                      </div>
+                      <div class="dialog-body">
+                      <p> Please confirm if you want to join the event</p>
+                      </div>
+
+                      <div class="dialog-footer">
+                        <button id="confirmButton" class="confirm-btn">Confirm</button>
+                        <button id="cancelButton" class="cancel-btn">Cancel</button>
+                      </div>
+                     
+              </dialog>
+              <!-- dialog end -->
+              <div id="successMessage" class="success-message" style="display: none;">
+                <p><i>Joined event successfully!</i></p>
+               </div>
+              
             </div>
           </section>
           <section class="card">
-            <img src="meeting3.jpg" alt="school1">
+            <img src="meeting4.jpg" alt="classroom4">
             <header><h2>South Kent School</h2></header> 
             <div class="schooldata">
             <ul>                
@@ -113,29 +134,6 @@
     </main>
     <footer></footer>
   </body>
-  <script>
-    // Function to load and display profile data from localStorage
-    function displayProfileData() {
-        const storedData = localStorage.getItem('profileData');
-        const profileDataContainer = document.getElementById('profile-data');
 
-        if (storedData) {
-            // Parse the stored data from localStorage
-            const parsedData = JSON.parse(storedData);
-
-            // Inject the data into the HTML
-            profileDataContainer.innerHTML = `
-                <p><strong>Hello, </strong> ${parsedData.username}</p>
-                <p><strong>Title:</strong> ${parsedData.title}</p>
-                <p><strong>Content:</strong> ${parsedData.content}</p>
-            `;
-        } else {
-            profileDataContainer.innerHTML = '<p>No profile data found.</p>';
-        }
-    }
-
-    // Call the function to display profile data when the page loads
-    document.addEventListener('DOMContentLoaded', displayProfileData);
-</script>
   <script src="script.js"></script>
 </html> 

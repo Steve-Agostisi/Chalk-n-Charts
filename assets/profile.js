@@ -9,26 +9,21 @@ form.addEventListener('submit', function(event) {
 
     // Get form data
     const username = document.getElementById('username').value;
-    const title = document.getElementById('title').value;
-    const content = document.getElementById('content').value;
+    const country = document.getElementById('country').value;
+    const TimeZone = document.getElementById('TimeZone').value;
+    const language = document.getElementById('language').value;
+    const grade = document.getElementById('grade').value;
+    const topic =document.getElementById('topic').value;
 
     // Validate the input data
-    if (username && title && content) {
+    if (username && country && TimeZone && language && grade && topic) {
         // Create an object with the form data
-        const profileData = { username, title, content };
+        const profileData = { username, country, TimeZone, language, grade, topic };
 
         // Store the data in localStorage
         localStorage.setItem('profileData', JSON.stringify(profileData));
         
-        // Display success message
-        message.textContent = 'Form submitted successfully!';
-        message.style.color = 'green';
 
-        // Clear the form
-        form.reset();
-
-        // Display stored data
-        displayStoredData();
         window.location.href='index.html';
         
     } else {
@@ -38,20 +33,3 @@ form.addEventListener('submit', function(event) {
     }
 });
 
-// Function to display the stored data from localStorage
-function displayStoredData() {
-    const storedData = localStorage.getItem('profileData');
-    if (storedData) {
-        const parsedData = JSON.parse(storedData);
-        dataOutput.innerHTML = `
-            <p><strong>Username:</strong> ${parsedData.username}</p>
-            <p><strong>Title:</strong> ${parsedData.title}</p>
-            <p><strong>Content:</strong> ${parsedData.content}</p>
-        `;
-    } else {
-        dataOutput.innerHTML = 'No data found in localStorage.';
-    }
-}
-
-// Display stored data when the page loads (if data exists)
-document.addEventListener('DOMContentLoaded', displayStoredData);
