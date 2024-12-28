@@ -24,7 +24,7 @@ h1 {
 
 form {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
 }
 
 label {
@@ -41,18 +41,39 @@ input, textarea {
 }
 
 button {
-  padding: 10px;
-  background-color: #f9e285;
-  color: white;
-  border: none;
-  border-radius: 5px;
+  height: 30px; /* Keep the original height */
+  padding: 0 15px; /* Slightly reduced horizontal padding */
+  border-width: 2px;
+  border-radius: 10px; /* Keep the original border radius */
   cursor: pointer;
-  max-width: fit-content;
+  margin-top: 8px;
+  margin-right: 5px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px; /* Slightly smaller font size */
+  font-weight: 500; /* Medium weight for clarity */
+  background: linear-gradient(145deg, #6650d7, #4e37b1); /* Gradient background */
+  color: white; /* White text color for contrast */
+  border: 2px solid #6650d7; /* Matching border color */
+  transition: all 0.3s ease-in-out; /* Smooth transition on hover */
+  text-transform: none; /* Removed uppercase */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Soft shadow */
 }
 
 button:hover {
-  background-color: rgba(252, 210, 0, 0.949);
+  background: linear-gradient(145deg, #4e37b1, #6650d7); /* Invert gradient on hover */
+  color: white; /* Keep text color white */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow for hover effect */
 }
+
+button:focus {
+  outline: none; /* Remove default outline */
+  border: 2px solid #4e37b1; /* Emphasize border on focus */
+}
+
+button:active {
+  transform: scale(0.98); /* Slight shrink when clicked */
+}
+
 
 #message {
   margin-top: 20px;

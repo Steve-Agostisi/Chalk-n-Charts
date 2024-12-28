@@ -12,18 +12,56 @@ html {
   
 
 
+  .modal{
+    display: none; 
+    position:fixed; 
+    justify-content: center;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 40%; 
+    height: 33%; 
+    font-size: 15px;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+    animation-name: animatetop;
+    animation-duration: 1s
+  }
+  
+  .modal-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 4px;
+    background-color: #FE6363;
+    color: white;
+  }
+  
+  .modal-body{
+    padding: 2px 8px;
+    background-color: white;
+    padding: 20px;
+  }
+  
+  .modal-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 4px;
+    background-color: #FE6363;
+    color: white;
+  }
+
 .Main-header {
 display: flex;
 padding-right: 20%;
 justify-content:space-between;
 height: 15%;
-color: rgb(8, 27, 44);
 font-family: "Trebuchet MS", sans-serif;
-font-size: 20px;
+font-size: 15px;
 letter-spacing: 0px;
 /*border-bottom: 2px solid black;*/
 /*text-transform: uppercase;  */
-line-height: 1px;        
+line-height: 3px;    
 }
 
 .logo{
@@ -51,11 +89,12 @@ nav {
   display: flex;
   background-color: #f9e285;
   justify-content:space-between;
+  
  }
  
  
  nav a {
-  color: #13293d;
+  
   padding: 14px 20px;
   text-decoration: none;
   text-align: center;
@@ -79,14 +118,13 @@ nav {
 .links-container a {
   margin-left: 20px;          /* Space between the links */
   text-decoration: none;      /* Remove underline from links */
-  color: black;               /* Optional: color for the links */
+  color: #6650d7;             /* Optional: color for the links */
 }
 
 .card {
     
     padding: 10px;
     flex: 0 0 300px;
-    background-color: #ff3cac;
     background-image: linear-gradient(
         225deg,
         #98C1ED 10%,
@@ -94,7 +132,7 @@ nav {
         #1D68B8 100%);
     margin: 20px;
     border-radius: 15px;
-    height: 400px;
+    height: 450px;
     transition: transform 1s;
 
 }
@@ -111,6 +149,10 @@ nav {
   transform: scale(1.2);
 }
 
+.card-btn{
+  display:inline-block;
+}
+
 .schools{
 flex: 1;
 padding: 50px;
@@ -120,81 +162,128 @@ justify-content: space-evenly;
 height: 100%; 
 }
 
-@media screen and (max-width:768){
-main, nav{
-    flex-direction: column;
-    
+.success-message{
+  color: aliceblue;
 }
+
+.myButton {
+  height: 30px; /* Keep the original height */
+  padding: 0 15px; /* Slightly reduced horizontal padding */
+  border-width: 2px;
+  border-radius: 10px; /* Keep the original border radius */
+  cursor: pointer;
+  margin-top: 8px;
+  margin-right: 5px;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px; /* Slightly smaller font size */
+  font-weight: 500; /* Medium weight for clarity */
+  background: linear-gradient(145deg, #6650d7, #4e37b1); /* Gradient background */
+  color: white; /* White text color for contrast */
+  border: 2px solid #6650d7; /* Matching border color */
+  transition: all 0.3s ease-in-out; /* Smooth transition on hover */
+  text-transform: none; /* Removed uppercase */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Soft shadow */
+}
+
+.myButtonhover {
+  background: linear-gradient(145deg, #4e37b1, #6650d7); /* Invert gradient on hover */
+  color: white; /* Keep text color white */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow for hover effect */
+}
+
+.myButton:focus {
+  outline: none; /* Remove default outline */
+  border: 2px solid #4e37b1; /* Emphasize border on focus */
+}
+
+.myButton:active {
+  transform: scale(0.98); /* Slight shrink when clicked */
+}
+
+
+.confirmation-dialog {
+  display: none;
+  position:relative;
+  top: 10%;
+  left: 50%;
+  width: 250px;
+  height: 80px;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, #FE6363, #FFB6B6, #D85B5B);
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+
+/* .confirmation-dialog {
+  display:none;
+  position:relative;
+  left: 0px;
+  right: 0px;
+  width: 300px;
+  height: 80px;
+  color: hsl(#FE6363, 50%, 70%);
+  margin: auto;
+  border-width: 0px;
+  border-style: hidden;
+  border-radius: 20px;
+  padding: 1em;
+  background-color: hsl(0, 99%, 75%);
+  pointer-events: none;
+  /* z-index: 1;
+ } */
+
+
+.join-btn {
+  background: transparent;
+  border-width: 0px;
+  font-size: 15px;
+  font-weight: bold;
+
+}
+
+.confirm-btn, .cancel-btn{
+  background: transparent;
+  border-width: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0px 20px;
+
+}
+
+.close-dialog {
+  background: transparent;
+  border-width: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 90%;
+
 }
 
 footer{
-padding: 10px;
-text-align: center;
-background:#FE6363;
-color: whitesmoke;
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-font-weight: 200;
-position: absolute;
-bottom: 0;
-width: 100%;
-height: 2.5rem; 
-
-} 
-
-button {
-height: 30px; 
-border-width: 3px; 
-border-radius: 15px;
-cursor: pointer;
-float: right; 
-font-family: Arial, sans-serif; 
-font-size: 18px;
-background-color: white;
-color: #6650d7;
-} 
-
-button:hover { 
-  background-color: rgb(159, 159, 220);
-} 
-
-.modal{
-  display: none; 
-  position:fixed; 
- justify-content: center;
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 50%; 
-  height: 40%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4);
-  animation-name: animatetop;
-  animation-duration: 1s
-}
-
-.modal-header{
-  padding: 2px 16px;
-  background-color: #FE6363;
-  color: white;
-}
-
-.modal-body{
-  padding: 2px 16px;
-  background-color: white;
-  padding: 20px;
-}
-
-.modal-footer{
-  display: flex;
-  justify-content: space-between;
-  padding: 2px 16px;
-  background-color: #FE6363;
-  color: white;
-}
+  padding: 10px;
+  text-align: center;
+  background:#FE6363;
+  color: whitesmoke;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 200;
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+  } 
 
 @keyframes animatetop {
   from {top:-300px; opacity:0}
   to {top:0; opacity:1}
+}
+
+@media screen and (max-width:768){
+  main, nav{
+      flex-direction: column;
+      
+  }
 }
 
